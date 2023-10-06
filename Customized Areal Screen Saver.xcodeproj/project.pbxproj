@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D27A8E152AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */; };
+		D27A8E172AD0812A00BD9CE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E162AD0812A00BD9CE1 /* ContentView.swift */; };
+		D27A8E192AD0812B00BD9CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */; };
+		D27A8E1C2AD0812B00BD9CE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27A8E1B2AD0812B00BD9CE1 /* Preview Assets.xcassets */; };
+		D2ACEC0F2AD082D500EF6D69 /* CustomScreenSaverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACEC0E2AD082D500EF6D69 /* CustomScreenSaverManager.swift */; };
+		D2ACEC112AD0C52500EF6D69 /* TVIdleScreenEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACEC102AD0C52500EF6D69 /* TVIdleScreenEntries.swift */; };
+		D2ACEC4F2AD0D79400EF6D69 /* CustomArealsManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACEC4E2AD0D79400EF6D69 /* CustomArealsManagementView.swift */; };
+		D2ACEC512AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACEC502AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D27A8E232AD0812B00BD9CE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D27A8E092AD0812900BD9CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D27A8E102AD0812A00BD9CE1;
+			remoteInfo = "Customized Areal Screen Saver";
+		};
+		D27A8E2D2AD0812B00BD9CE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D27A8E092AD0812900BD9CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D27A8E102AD0812A00BD9CE1;
+			remoteInfo = "Customized Areal Screen Saver";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D27A8E112AD0812A00BD9CE1 /* Customized Areal Screen Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customized Areal Screen Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customized_Areal_Screen_SaverApp.swift; sourceTree = "<group>"; };
+		D27A8E162AD0812A00BD9CE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D27A8E1B2AD0812B00BD9CE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D27A8E222AD0812B00BD9CE1 /* Customized Areal Screen SaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Customized Areal Screen SaverTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27A8E2C2AD0812B00BD9CE1 /* Customized Areal Screen SaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Customized Areal Screen SaverUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2ACEC0E2AD082D500EF6D69 /* CustomScreenSaverManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScreenSaverManager.swift; sourceTree = "<group>"; };
+		D2ACEC102AD0C52500EF6D69 /* TVIdleScreenEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVIdleScreenEntries.swift; sourceTree = "<group>"; };
+		D2ACEC4E2AD0D79400EF6D69 /* CustomArealsManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomArealsManagementView.swift; sourceTree = "<group>"; };
+		D2ACEC502AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenSaverDialogView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D27A8E0E2AD0812A00BD9CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E1F2AD0812B00BD9CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E292AD0812B00BD9CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D27A8E082AD0812900BD9CE1 = {
+			isa = PBXGroup;
+			children = (
+				D27A8E132AD0812A00BD9CE1 /* Customized Areal Screen Saver */,
+				D27A8E122AD0812A00BD9CE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D27A8E122AD0812A00BD9CE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D27A8E112AD0812A00BD9CE1 /* Customized Areal Screen Saver.app */,
+				D27A8E222AD0812B00BD9CE1 /* Customized Areal Screen SaverTests.xctest */,
+				D27A8E2C2AD0812B00BD9CE1 /* Customized Areal Screen SaverUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D27A8E132AD0812A00BD9CE1 /* Customized Areal Screen Saver */ = {
+			isa = PBXGroup;
+			children = (
+				D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */,
+				D27A8E162AD0812A00BD9CE1 /* ContentView.swift */,
+				D2ACEC4E2AD0D79400EF6D69 /* CustomArealsManagementView.swift */,
+				D2ACEC502AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift */,
+				D2ACEC0E2AD082D500EF6D69 /* CustomScreenSaverManager.swift */,
+				D2ACEC102AD0C52500EF6D69 /* TVIdleScreenEntries.swift */,
+				D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */,
+				D27A8E1A2AD0812B00BD9CE1 /* Preview Content */,
+			);
+			path = "Customized Areal Screen Saver";
+			sourceTree = "<group>";
+		};
+		D27A8E1A2AD0812B00BD9CE1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D27A8E1B2AD0812B00BD9CE1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D27A8E102AD0812A00BD9CE1 /* Customized Areal Screen Saver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27A8E362AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen Saver" */;
+			buildPhases = (
+				D27A8E0D2AD0812A00BD9CE1 /* Sources */,
+				D27A8E0E2AD0812A00BD9CE1 /* Frameworks */,
+				D27A8E0F2AD0812A00BD9CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Customized Areal Screen Saver";
+			productName = "Customized Areal Screen Saver";
+			productReference = D27A8E112AD0812A00BD9CE1 /* Customized Areal Screen Saver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D27A8E212AD0812B00BD9CE1 /* Customized Areal Screen SaverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27A8E392AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen SaverTests" */;
+			buildPhases = (
+				D27A8E1E2AD0812B00BD9CE1 /* Sources */,
+				D27A8E1F2AD0812B00BD9CE1 /* Frameworks */,
+				D27A8E202AD0812B00BD9CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D27A8E242AD0812B00BD9CE1 /* PBXTargetDependency */,
+			);
+			name = "Customized Areal Screen SaverTests";
+			productName = "Customized Areal Screen SaverTests";
+			productReference = D27A8E222AD0812B00BD9CE1 /* Customized Areal Screen SaverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D27A8E2B2AD0812B00BD9CE1 /* Customized Areal Screen SaverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27A8E3C2AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen SaverUITests" */;
+			buildPhases = (
+				D27A8E282AD0812B00BD9CE1 /* Sources */,
+				D27A8E292AD0812B00BD9CE1 /* Frameworks */,
+				D27A8E2A2AD0812B00BD9CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D27A8E2E2AD0812B00BD9CE1 /* PBXTargetDependency */,
+			);
+			name = "Customized Areal Screen SaverUITests";
+			productName = "Customized Areal Screen SaverUITests";
+			productReference = D27A8E2C2AD0812B00BD9CE1 /* Customized Areal Screen SaverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D27A8E092AD0812900BD9CE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D27A8E102AD0812A00BD9CE1 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					D27A8E212AD0812B00BD9CE1 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D27A8E102AD0812A00BD9CE1;
+					};
+					D27A8E2B2AD0812B00BD9CE1 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = D27A8E102AD0812A00BD9CE1;
+					};
+				};
+			};
+			buildConfigurationList = D27A8E0C2AD0812900BD9CE1 /* Build configuration list for PBXProject "Customized Areal Screen Saver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D27A8E082AD0812900BD9CE1;
+			productRefGroup = D27A8E122AD0812A00BD9CE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D27A8E102AD0812A00BD9CE1 /* Customized Areal Screen Saver */,
+				D27A8E212AD0812B00BD9CE1 /* Customized Areal Screen SaverTests */,
+				D27A8E2B2AD0812B00BD9CE1 /* Customized Areal Screen SaverUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D27A8E0F2AD0812A00BD9CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27A8E1C2AD0812B00BD9CE1 /* Preview Assets.xcassets in Resources */,
+				D27A8E192AD0812B00BD9CE1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E202AD0812B00BD9CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E2A2AD0812B00BD9CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D27A8E0D2AD0812A00BD9CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2ACEC512AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift in Sources */,
+				D27A8E172AD0812A00BD9CE1 /* ContentView.swift in Sources */,
+				D2ACEC0F2AD082D500EF6D69 /* CustomScreenSaverManager.swift in Sources */,
+				D2ACEC112AD0C52500EF6D69 /* TVIdleScreenEntries.swift in Sources */,
+				D27A8E152AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift in Sources */,
+				D2ACEC4F2AD0D79400EF6D69 /* CustomArealsManagementView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E1E2AD0812B00BD9CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27A8E282AD0812B00BD9CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D27A8E242AD0812B00BD9CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D27A8E102AD0812A00BD9CE1 /* Customized Areal Screen Saver */;
+			targetProxy = D27A8E232AD0812B00BD9CE1 /* PBXContainerItemProxy */;
+		};
+		D27A8E2E2AD0812B00BD9CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D27A8E102AD0812A00BD9CE1 /* Customized Areal Screen Saver */;
+			targetProxy = D27A8E2D2AD0812B00BD9CE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D27A8E342AD0812B00BD9CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D27A8E352AD0812B00BD9CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D27A8E372AD0812B00BD9CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Customized Areal Screen Saver/Preview Content\"";
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-Saver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D27A8E382AD0812B00BD9CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Customized Areal Screen Saver/Preview Content\"";
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-Saver";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D27A8E3A2AD0812B00BD9CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-SaverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customized Areal Screen Saver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Customized Areal Screen Saver";
+			};
+			name = Debug;
+		};
+		D27A8E3B2AD0812B00BD9CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-SaverTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Customized Areal Screen Saver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Customized Areal Screen Saver";
+			};
+			name = Release;
+		};
+		D27A8E3D2AD0812B00BD9CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-SaverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Customized Areal Screen Saver";
+			};
+			name = Debug;
+		};
+		D27A8E3E2AD0812B00BD9CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZP5A8E7DWH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-SaverUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Customized Areal Screen Saver";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D27A8E0C2AD0812900BD9CE1 /* Build configuration list for PBXProject "Customized Areal Screen Saver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27A8E342AD0812B00BD9CE1 /* Debug */,
+				D27A8E352AD0812B00BD9CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27A8E362AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen Saver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27A8E372AD0812B00BD9CE1 /* Debug */,
+				D27A8E382AD0812B00BD9CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27A8E392AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen SaverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27A8E3A2AD0812B00BD9CE1 /* Debug */,
+				D27A8E3B2AD0812B00BD9CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27A8E3C2AD0812B00BD9CE1 /* Build configuration list for PBXNativeTarget "Customized Areal Screen SaverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27A8E3D2AD0812B00BD9CE1 /* Debug */,
+				D27A8E3E2AD0812B00BD9CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D27A8E092AD0812900BD9CE1 /* Project object */;
+}
