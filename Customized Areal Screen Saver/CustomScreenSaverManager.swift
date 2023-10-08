@@ -1,6 +1,6 @@
 //
 //  CustomScreenSaverManager.swift
-//  Customized Areal Screen Saver
+//  Customized Aerial Screen Saver
 //
 //  Created by falcon on 2023/10/7.
 //
@@ -20,16 +20,16 @@ struct AssetsURLCollection{
 
 class CustomScreenSaverManager: ObservableObject {
     
-    @Published var customArealCategorySubcategories: Array<TVIdleScreenEntryCategorySubcategory> = []
+    @Published var customAerialCategorySubcategories: Array<TVIdleScreenEntryCategorySubcategory> = []
     
     private let fileManager: FileManager = FileManager()
-    private let customArealCategoryUUID: String = "C8EE7C2A-8025-4094-91C2-9637B6D2A64D"
+    private let customAerialCategoryUUID: String = "C8EE7C2A-8025-4094-91C2-9637B6D2A64D"
     private var userPassword: String? = nil
     
     var assetsURLCollection: AssetsURLCollection
     
     private var TVIdleScreenEntries: TVIdleScreenEntry?
-    private var customArealCategoryIndex: Int = -1
+    private var customAerialCategoryIndex: Int = -1
     
     
     private let defaultSystemAssetsRootPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .systemDomainMask).first!.appending(path: "com.apple.idleassetsd").path(percentEncoded: false)
@@ -66,7 +66,7 @@ class CustomScreenSaverManager: ObservableObject {
         }
         self._checkEntriesFileExists()
         self._loadEntriesConfig()
-        self._checkCustomArealCategoryExists()
+        self._checkCustomAerialCategoryExists()
     }
     
     private func _createUserDataDirectory(customAssetsPreviewURL: URL, customAssetsVideoURL: URL){
@@ -109,22 +109,22 @@ class CustomScreenSaverManager: ObservableObject {
         }
     }
     
-    private func _updateCustomArealCategorySubcategories(){
-        print("self.customArealCategoryIndex \(self.customArealCategoryIndex)")
-        self.customArealCategorySubcategories = self.TVIdleScreenEntries!.categories[self.customArealCategoryIndex].subcategories
+    private func _updateCustomAerialCategorySubcategories(){
+        print("self.customAerialCategoryIndex \(self.customAerialCategoryIndex)")
+        self.customAerialCategorySubcategories = self.TVIdleScreenEntries!.categories[self.customAerialCategoryIndex].subcategories
     }
     
-    private func _checkCustomArealCategoryExists(){
-        self.customArealCategoryIndex = self.TVIdleScreenEntries!.categories.firstIndex { category in
-            category.id == self.customArealCategoryUUID
+    private func _checkCustomAerialCategoryExists(){
+        self.customAerialCategoryIndex = self.TVIdleScreenEntries!.categories.firstIndex { category in
+            category.id == self.customAerialCategoryUUID
         } ?? -1
 
-        if(self.customArealCategoryIndex == -1){
+        if(self.customAerialCategoryIndex == -1){
             self._backupDefaultEntries()
-            self._createCustomArealCategory()
+            self._createCustomAerialCategory()
             return
         }
-        self._updateCustomArealCategorySubcategories()
+        self._updateCustomAerialCategorySubcategories()
     }
     
     private func _checkEntriesFileExists(){
@@ -134,24 +134,24 @@ class CustomScreenSaverManager: ObservableObject {
         }
     }
     
-    private func _createCustomArealCategory(){
+    private func _createCustomAerialCategory(){
         let customEntryCategory = TVIdleScreenEntryCategory(
-            id: self.customArealCategoryUUID,
+            id: self.customAerialCategoryUUID,
             preferredOrder: 5,
             previewImage: "",
-            localizedNameKey: "Customized Areal",
+            localizedNameKey: "Customized Aerial",
             representativeAssetID: "",
             localizedDescriptionKey: "Customized videos hacked by XTLi",
             subcategories: []
         )
         self.TVIdleScreenEntries?.categories.append(customEntryCategory)
-        self.customArealCategoryIndex = self.TVIdleScreenEntries!.categories.firstIndex { category in
-            category.id == self.customArealCategoryUUID
+        self.customAerialCategoryIndex = self.TVIdleScreenEntries!.categories.firstIndex { category in
+            category.id == self.customAerialCategoryUUID
         } ?? -1
         _saveEntryChanges()
     }
     
-    private func _addNewArealAsset(newEntryAsset: TVIdleScreenEntryAsset, newSubcategory: TVIdleScreenEntryCategorySubcategory, originalAssetPath: String, originalAsserPreviewPath: String){
+    private func _addNewAerialAsset(newEntryAsset: TVIdleScreenEntryAsset, newSubcategory: TVIdleScreenEntryCategorySubcategory, originalAssetPath: String, originalAsserPreviewPath: String){
         let newAssetID = newEntryAsset.id
         do {
             try fileManager.copyItem(
@@ -170,7 +170,7 @@ class CustomScreenSaverManager: ObservableObject {
         }
         
         self.TVIdleScreenEntries?.assets.append(newEntryAsset)
-        self.TVIdleScreenEntries?.categories[self.customArealCategoryIndex].subcategories.append(newSubcategory)
+        self.TVIdleScreenEntries?.categories[self.customAerialCategoryIndex].subcategories.append(newSubcategory)
         _saveEntryChanges()
     }
     
@@ -182,7 +182,7 @@ class CustomScreenSaverManager: ObservableObject {
         } catch {
             print(error)
         }
-        self._updateCustomArealCategorySubcategories()
+        self._updateCustomAerialCategorySubcategories()
     }
     
     private func _formatURLToCommandLineSafe(_ originalURL: URL) -> String{
@@ -260,7 +260,7 @@ class CustomScreenSaverManager: ObservableObject {
             id: assetID,
             includeInShuffle: includeInShuffle,
             subcategories: [subcategoryID],
-            categories: [self.customArealCategoryUUID],
+            categories: [self.customAerialCategoryUUID],
             url4KSDR240FPS: customAssetPath
         )
         let newSubcategory = TVIdleScreenEntryCategorySubcategory(
@@ -272,14 +272,14 @@ class CustomScreenSaverManager: ObservableObject {
             localizedDescriptionKey: screenSaverDescription
         )
         
-        self._addNewArealAsset(newEntryAsset: newEntryAsset, newSubcategory: newSubcategory, originalAssetPath: videoPath, originalAsserPreviewPath: videoPreviewPath)
+        self._addNewAerialAsset(newEntryAsset: newEntryAsset, newSubcategory: newSubcategory, originalAssetPath: videoPath, originalAsserPreviewPath: videoPreviewPath)
     }
     
     func deleteScreenSaver(id: String){
         self.TVIdleScreenEntries?.assets.removeAll(where: { asset in
             asset.id == id
         })
-        self.TVIdleScreenEntries?.categories[self.customArealCategoryIndex].subcategories.removeAll(where: { subcategory in
+        self.TVIdleScreenEntries?.categories[self.customAerialCategoryIndex].subcategories.removeAll(where: { subcategory in
             subcategory.representativeAssetID == id
         })
         

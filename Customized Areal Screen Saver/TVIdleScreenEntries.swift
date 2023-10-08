@@ -1,6 +1,6 @@
 //
 //  TVIdleScreenEntries.swift
-//  Customized Areal Screen Saver
+//  Customized Aerial Screen Saver
 //
 //  Created by falcon on 2023/10/7.
 //

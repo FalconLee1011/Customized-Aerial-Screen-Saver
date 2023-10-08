@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D27A8E102AD0812A00BD9CE1"
-               BuildableName = "Customized Areal Screen Saver.app"
-               BlueprintName = "Customized Areal Screen Saver"
-               ReferencedContainer = "container:Customized Areal Screen Saver.xcodeproj">
+               BuildableName = "Customized Aerial Screen Saver.app"
+               BlueprintName = "Customized Aerial Screen Saver"
+               ReferencedContainer = "container:Customized Aerial Screen Saver.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,9 +35,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D27A8E212AD0812B00BD9CE1"
-               BuildableName = "Customized Areal Screen SaverTests.xctest"
-               BlueprintName = "Customized Areal Screen SaverTests"
-               ReferencedContainer = "container:Customized Areal Screen Saver.xcodeproj">
+               BuildableName = "Customized Aerial Screen SaverTests.xctest"
+               BlueprintName = "Customized Aerial Screen SaverTests"
+               ReferencedContainer = "container:Customized Aerial Screen Saver.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D27A8E2B2AD0812B00BD9CE1"
-               BuildableName = "Customized Areal Screen SaverUITests.xctest"
-               BlueprintName = "Customized Areal Screen SaverUITests"
-               ReferencedContainer = "container:Customized Areal Screen Saver.xcodeproj">
+               BuildableName = "Customized Aerial Screen SaverUITests.xctest"
+               BlueprintName = "Customized Aerial Screen SaverUITests"
+               ReferencedContainer = "container:Customized Aerial Screen Saver.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D27A8E102AD0812A00BD9CE1"
-            BuildableName = "Customized Areal Screen Saver.app"
-            BlueprintName = "Customized Areal Screen Saver"
-            ReferencedContainer = "container:Customized Areal Screen Saver.xcodeproj">
+            BuildableName = "Customized Aerial Screen Saver.app"
+            BlueprintName = "Customized Aerial Screen Saver"
+            ReferencedContainer = "container:Customized Aerial Screen Saver.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D27A8E102AD0812A00BD9CE1"
-            BuildableName = "Customized Areal Screen Saver.app"
-            BlueprintName = "Customized Areal Screen Saver"
-            ReferencedContainer = "container:Customized Areal Screen Saver.xcodeproj">
+            BuildableName = "Customized Aerial Screen Saver.app"
+            BlueprintName = "Customized Aerial Screen Saver"
+            ReferencedContainer = "container:Customized Aerial Screen Saver.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Customized Areal Screen Saver
+//  Customized Aerial Screen Saver
 //
 //  Created by falcon on 2023/10/7.
 //
@@ -69,7 +69,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        CustomArealsManagementView(screenSaverManager: screenSaverManager)
+        CustomAerialsManagementView(screenSaverManager: screenSaverManager)
             .sheet(isPresented: $showPaaswordPrompt) {
                 Text("Your password is required to make system-level changes.")
                     .padding()

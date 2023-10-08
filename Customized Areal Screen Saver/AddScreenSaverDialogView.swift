@@ -1,6 +1,6 @@
 //
 //  AddScreenSaverDialogView.swift
-//  Customized Areal Screen Saver
+//  Customized Aerial Screen Saver
 //
 //  Created by falcon on 2023/10/7.
 //
@@ -78,7 +78,7 @@ struct AddScreenSaverDialogView: View {
     
     
     var body: some View {
-        Text("Add a new Areal screen saver").padding()
+        Text("Add a new Aerial screen saver").padding()
         VStack{
             HStack{
                 TextField("Screen Saver Name", text: $screenSaverName)

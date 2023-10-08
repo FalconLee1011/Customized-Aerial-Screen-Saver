@@ -1,6 +1,6 @@
 //
-//  CustomArealsManagementView.swift
-//  Customized Areal Screen Saver
+//  CustomAerialsManagementView.swift
+//  Customized Aerial Screen Saver
 //
 //  Created by falcon on 2023/10/7.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 import AppKit
 
-struct CustomArealsManagementView: View {
+struct CustomAerialsManagementView: View {
 
     @ObservedObject var screenSaverManager: CustomScreenSaverManager
     
@@ -50,7 +50,7 @@ struct CustomArealsManagementView: View {
                 Button(action: {
                     self.showAddDialog = true
                 }) {
-                    Label("Add Custom Areal Screen Saver", systemImage: "plus")
+                    Label("Add Custom Aerial Screen Saver", systemImage: "plus")
                 }.padding()
                 Button(action: openCustomAssetsInFinder) {
                     Label("Open custom assets in finder", systemImage: "folder")
@@ -61,16 +61,16 @@ struct CustomArealsManagementView: View {
             }.frame(alignment: .top)
             ScrollView{
                 LazyVGrid(columns: columns){
-                    ForEach($screenSaverManager.customArealCategorySubcategories) { customArealCategorySubcategory in
+                    ForEach($screenSaverManager.customAerialCategorySubcategories) { customAerialCategorySubcategory in
                         VStack{
-                            Image(nsImage: loadImageFromURL(customArealCategorySubcategory.previewImage.wrappedValue))
+                            Image(nsImage: loadImageFromURL(customAerialCategorySubcategory.previewImage.wrappedValue))
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(height: 75)
-                            Text(customArealCategorySubcategory.localizedNameKey.wrappedValue)
-                            Text(customArealCategorySubcategory.representativeAssetID.wrappedValue).font(.system(size: 8))
+                            Text(customAerialCategorySubcategory.localizedNameKey.wrappedValue)
+                            Text(customAerialCategorySubcategory.representativeAssetID.wrappedValue).font(.system(size: 8))
                             Button(action: {
-                                removeCustomScreenSaver(uuid: customArealCategorySubcategory.representativeAssetID.wrappedValue)
+                                removeCustomScreenSaver(uuid: customAerialCategorySubcategory.representativeAssetID.wrappedValue)
                             }) {
                                 Label("Delete", systemImage: "trash")
                                     .foregroundStyle(.red)
@@ -92,5 +92,5 @@ struct CustomArealsManagementView: View {
 }
 
 //#Preview {
-//    CustomArealsManagementView()
+//    CustomAerialsManagementView()
 //}
