@@ -19,13 +19,15 @@ struct CustomArealsManagementView: View {
     }
     
     private func removeCustomScreenSaver(uuid: String){
-        print("removeCustomScreenSaver \(uuid)")
         self.screenSaverManager.deleteScreenSaver(id: uuid)
     }
     
     private func openCustomAssetsInFinder(){
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: self.screenSaverManager.getCustomAssetsRootURL())
-        print("openCustomAssetsInFinder")
+    }
+    
+    private func openSystemAssetsInFinder(){
+        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: self.screenSaverManager.getSystemAssetsVideoURL())
     }
     
     private func getAssetSize(filePath: String) -> Int{
@@ -52,6 +54,9 @@ struct CustomArealsManagementView: View {
                 }.padding()
                 Button(action: openCustomAssetsInFinder) {
                     Label("Open custom assets in finder", systemImage: "folder")
+                }.padding()
+                Button(action: openSystemAssetsInFinder) {
+                    Label("Open system assets in finder", systemImage: "folder")
                 }.padding()
             }.frame(alignment: .top)
             ScrollView{

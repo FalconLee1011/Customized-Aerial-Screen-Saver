@@ -64,6 +64,7 @@ class CustomScreenSaverManager: ObservableObject {
         if (!self.fileManager.fileExists(atPath: _customAssetsRootPath, isDirectory: &isDir)){
             self._createUserDataDirectory(customAssetsPreviewURL: self.assetsURLCollection.customAssetsPreviewURL, customAssetsVideoURL: self.assetsURLCollection.customAssetsVideoURL)
         }
+        self._checkEntriesFileExists()
         self._loadEntriesConfig()
         self._checkCustomArealCategoryExists()
     }
@@ -124,6 +125,13 @@ class CustomScreenSaverManager: ObservableObject {
             return
         }
         self._updateCustomArealCategorySubcategories()
+    }
+    
+    private func _checkEntriesFileExists(){
+        var isDir: ObjCBool = false
+        if (!self.fileManager.fileExists(atPath: self.assetsURLCollection.customAssetsEntriesURL.path(), isDirectory: &isDir)){
+            self._backupDefaultEntries()
+        }
     }
     
     private func _createCustomArealCategory(){
@@ -193,9 +201,14 @@ class CustomScreenSaverManager: ObservableObject {
     }
     
     private func _runCommand(command: String, requirePsssword: Bool = false) -> Int{
+        if (requirePsssword && self.userPassword == nil){
+            return -1
+        }
         let process: Process = Process()
         process.executableURL = URL(filePath: "/bin/bash")
         process.arguments = ["-c", command]
+        
+        print("running command \(command)")
         
         let inputPipe = Pipe()
         process.standardInput = inputPipe
@@ -223,6 +236,10 @@ class CustomScreenSaverManager: ObservableObject {
     
     func getCustomAssetsRootURL() -> String{
         return self.assetsURLCollection.customAssetsRootURL.path(percentEncoded: false)
+    }
+    
+    func getSystemAssetsVideoURL() -> String{
+        return self.assetsURLCollection.systemAssetsVideoURL.path(percentEncoded: false)
     }
     
     func addNewScreenSaver(screenSaverName: String, screenSaverDescription: String, videoPath: String, videoPreviewPath: String, includeInShuffle: Bool){

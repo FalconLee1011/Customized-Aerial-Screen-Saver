@@ -56,6 +56,17 @@ struct ContentView: View {
         }
         return process.terminationStatus == 0 ? true : false
     }
+    
+    private func verifyPassword(){
+        if(testPassword()){
+            passwordTestResult = .success
+            screenSaverManager.setUserPassword(password: userPassword)
+            showPaaswordPrompt = false
+        }else{
+            passwordTestResult = .failed
+            userPassword = ""
+        }
+    }
 
     var body: some View {
         CustomArealsManagementView(screenSaverManager: screenSaverManager)
@@ -68,16 +79,11 @@ struct ContentView: View {
                     SecureField("\(passwordTestResult == .failed ? "Invalid Password" : "Password" )", text: $userPassword)
                         .foregroundStyle(passwordTestResult == .failed ? .red : .gray)
                         .background(passwordTestResult == .failed ? Color(red: 1, green: 0, blue: 0, opacity: 0.5) : .clear)
-                }.padding()
+                }.padding().onSubmit {
+                    verifyPassword()
+                }
                 Button {
-                    if(testPassword()){
-                        passwordTestResult = .success
-                        screenSaverManager.setUserPassword(password: userPassword)
-                        showPaaswordPrompt = false
-                    }else{
-                        passwordTestResult = .failed
-                        userPassword = ""
-                    }
+                    verifyPassword()
                 } label: {
                     Text("Authorize")
                 }.padding()

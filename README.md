@@ -56,6 +56,6 @@ If you find this project useful and would like to support its development, you c
   - Star this project
   - Spread happiness! Share the app!
 
-If you really love this app or me, you can 
+If you really love this app or me, you can consider
 
 <a href="https://www.buymeacoffee.com/xtli" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
