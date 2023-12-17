@@ -33,7 +33,7 @@ class CustomScreenSaverManager: ObservableObject {
     
     
     private let defaultSystemAssetsRootPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .systemDomainMask).first!.appending(path: "com.apple.idleassetsd").path(percentEncoded: false)
-    private let defaultCustomAssetsRootPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appending(path: "com.xtl.customizedarealscreensaver").path(percentEncoded: false)
+    private let defaultCustomAssetsRootPath = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appending(path: "com.xtl.customizedaerialscreensaver").path(percentEncoded: false)
     
     init(
         systemAssetsRootPath: String? = nil,
@@ -55,7 +55,7 @@ class CustomScreenSaverManager: ObservableObject {
             systemAssetsVideoURL: systemAssetsRootURL.appending(component: "Customer"),
             systemAssetsEntriesURL: systemAssetsRootURL.appending(component: "Customer/entries.json"),
             customAssetsRootURL: customAssetsRootURL,
-            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-perview"),
+            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-preview"),
             customAssetsVideoURL: customAssetsRootURL.appending(component: "video"),
             customAssetsEntriesURL: customAssetsRootURL.appending(component: "entries.json")
         )
