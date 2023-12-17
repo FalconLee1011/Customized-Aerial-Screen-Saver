@@ -23,7 +23,7 @@ struct AddScreenSaverDialogView: View {
     @State private var previewImageDropZone = Image(systemName: "photo")
     
     @State private var assetVideoDropZonePrompt = "Drop a Video"
-    @State private var previewImageDropZonePrompt = "Drop a preview image"
+    @State private var previewImageDropZonePrompt = "Drop a Preview Image"
     
     private func addCustomScreenSaver(){
         print("addCustomScreenSaver")

@@ -55,7 +55,7 @@ class CustomScreenSaverManager: ObservableObject {
             systemAssetsVideoURL: systemAssetsRootURL.appending(component: "Customer"),
             systemAssetsEntriesURL: systemAssetsRootURL.appending(component: "Customer/entries.json"),
             customAssetsRootURL: customAssetsRootURL,
-            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-perview"),
+            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-preview"),
             customAssetsVideoURL: customAssetsRootURL.appending(component: "video"),
             customAssetsEntriesURL: customAssetsRootURL.appending(component: "entries.json")
         )
