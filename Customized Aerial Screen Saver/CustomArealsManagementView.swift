@@ -53,10 +53,10 @@ struct CustomAerialsManagementView: View {
                     Label("Add Custom Aerial Screen Saver", systemImage: "plus")
                 }.padding()
                 Button(action: openCustomAssetsInFinder) {
-                    Label("Open custom assets in finder", systemImage: "folder")
+                    Label("Open Custom Assets In Finder", systemImage: "folder")
                 }.padding()
                 Button(action: openSystemAssetsInFinder) {
-                    Label("Open system assets in finder", systemImage: "folder")
+                    Label("Open System Assets In Finder", systemImage: "folder")
                 }.padding()
             }.frame(alignment: .top)
             ScrollView{

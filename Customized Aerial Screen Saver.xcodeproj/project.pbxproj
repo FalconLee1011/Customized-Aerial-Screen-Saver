@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D27A8E152AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */; };
+		2FCA59B92B3127BC00F72B8B /* MoveFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA59B82B3127BC00F72B8B /* MoveFiles.swift */; };
+		D27A8E152AD0812A00BD9CE1 /* Customized_Aerial_Screen_SaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E142AD0812A00BD9CE1 /* Customized_Aerial_Screen_SaverApp.swift */; };
 		D27A8E172AD0812A00BD9CE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E162AD0812A00BD9CE1 /* ContentView.swift */; };
 		D27A8E192AD0812B00BD9CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */; };
 		D27A8E1C2AD0812B00BD9CE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27A8E1B2AD0812B00BD9CE1 /* Preview Assets.xcassets */; };
@@ -35,8 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FCA59B82B3127BC00F72B8B /* MoveFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveFiles.swift; sourceTree = "<group>"; };
 		D27A8E112AD0812A00BD9CE1 /* Customized Aerial Screen Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customized Aerial Screen Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customized_Areal_Screen_SaverApp.swift; sourceTree = "<group>"; };
+		D27A8E142AD0812A00BD9CE1 /* Customized_Aerial_Screen_SaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customized_Aerial_Screen_SaverApp.swift; sourceTree = "<group>"; };
 		D27A8E162AD0812A00BD9CE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D27A8E1B2AD0812B00BD9CE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -73,10 +75,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FCA59B72B31268B00F72B8B /* migration */ = {
+			isa = PBXGroup;
+			children = (
+				2FCA59B82B3127BC00F72B8B /* MoveFiles.swift */,
+			);
+			path = migration;
+			sourceTree = "<group>";
+		};
 		D27A8E082AD0812900BD9CE1 = {
 			isa = PBXGroup;
 			children = (
-				D27A8E132AD0812A00BD9CE1 /* Customized Areal Screen Saver */,
+				D27A8E132AD0812A00BD9CE1 /* Customized Aerial Screen Saver */,
 				D27A8E122AD0812A00BD9CE1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,10 +101,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D27A8E132AD0812A00BD9CE1 /* Customized Areal Screen Saver */ = {
+		D27A8E132AD0812A00BD9CE1 /* Customized Aerial Screen Saver */ = {
 			isa = PBXGroup;
 			children = (
-				D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */,
+				2FCA59B72B31268B00F72B8B /* migration */,
+				D27A8E142AD0812A00BD9CE1 /* Customized_Aerial_Screen_SaverApp.swift */,
 				D27A8E162AD0812A00BD9CE1 /* ContentView.swift */,
 				D2ACEC4E2AD0D79400EF6D69 /* CustomArealsManagementView.swift */,
 				D2ACEC502AD0E43D00EF6D69 /* AddScreenSaverDialogView.swift */,
@@ -103,7 +114,7 @@
 				D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */,
 				D27A8E1A2AD0812B00BD9CE1 /* Preview Content */,
 			);
-			path = "Customized Areal Screen Saver";
+			path = "Customized Aerial Screen Saver";
 			sourceTree = "<group>";
 		};
 		D27A8E1A2AD0812B00BD9CE1 /* Preview Content */ = {
@@ -248,8 +259,9 @@
 				D27A8E172AD0812A00BD9CE1 /* ContentView.swift in Sources */,
 				D2ACEC0F2AD082D500EF6D69 /* CustomScreenSaverManager.swift in Sources */,
 				D2ACEC112AD0C52500EF6D69 /* TVIdleScreenEntries.swift in Sources */,
-				D27A8E152AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift in Sources */,
+				D27A8E152AD0812A00BD9CE1 /* Customized_Aerial_Screen_SaverApp.swift in Sources */,
 				D2ACEC4F2AD0D79400EF6D69 /* CustomArealsManagementView.swift in Sources */,
+				2FCA59B92B3127BC00F72B8B /* MoveFiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,12 +418,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Customized Aerial Screen Saver/Customized_Areal_Screen_Saver.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Customized Areal Screen Saver/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Customized Aerial Screen Saver/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP5A8E7DWH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -436,12 +448,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Customized Aerial Screen Saver/Customized_Areal_Screen_Saver.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Customized Areal Screen Saver/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Customized Aerial Screen Saver/Preview Content\"";
 				DEVELOPMENT_TEAM = ZP5A8E7DWH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
