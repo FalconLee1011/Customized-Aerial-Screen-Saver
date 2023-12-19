@@ -62,6 +62,9 @@ struct ContentView: View {
             passwordTestResult = .success
             screenSaverManager.setUserPassword(password: userPassword)
             showPaaswordPrompt = false
+            
+            // I think this might be a good part of the startup flow to trigger migration
+            moveFilesIfFound()
         }else{
             passwordTestResult = .failed
             userPassword = ""
