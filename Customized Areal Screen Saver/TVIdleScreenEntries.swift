@@ -21,7 +21,7 @@ struct TVIdleScreenEntryAsset: Codable{
     let showInTopLevel: Bool
     let preferredOrder: Int
     let pointsOfInterest: Dictionary<String, String>
-    let previewImage: String
+    var previewImage: String
     let accessibilityLabel: String
     let id: String
     let includeInShuffle: Bool
@@ -48,7 +48,7 @@ struct TVIdleScreenEntryAsset: Codable{
 struct TVIdleScreenEntryCategory: Codable{
     let id: String
     let preferredOrder: Int
-    let previewImage: String
+    var previewImage: String
     let localizedNameKey: String
     let representativeAssetID: String
     let localizedDescriptionKey: String

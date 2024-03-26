@@ -55,7 +55,7 @@ class CustomScreenSaverManager: ObservableObject {
             systemAssetsVideoURL: systemAssetsRootURL.appending(component: "Customer"),
             systemAssetsEntriesURL: systemAssetsRootURL.appending(component: "Customer/entries.json"),
             customAssetsRootURL: customAssetsRootURL,
-            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-perview"),
+            customAssetsPreviewURL: customAssetsRootURL.appending(component: "asset-preview"),
             customAssetsVideoURL: customAssetsRootURL.appending(component: "video"),
             customAssetsEntriesURL: customAssetsRootURL.appending(component: "entries.json")
         )
@@ -64,9 +64,58 @@ class CustomScreenSaverManager: ObservableObject {
         if (!self.fileManager.fileExists(atPath: _customAssetsRootPath, isDirectory: &isDir)){
             self._createUserDataDirectory(customAssetsPreviewURL: self.assetsURLCollection.customAssetsPreviewURL, customAssetsVideoURL: self.assetsURLCollection.customAssetsVideoURL)
         }
+        
         self._checkEntriesFileExists()
         self._loadEntriesConfig()
         self._checkCustomAerialCategoryExists()
+        
+        self._fixMispelledPath(customAssetsRootURL: customAssetsRootURL)
+    }
+    
+    private func _fixMispelledPath(customAssetsRootURL: URL){
+        // asset-preview dir misspelled #2
+        // Fix folder path
+        let misspelledPath = customAssetsRootURL.appending(component: "asset-perview")
+        if (self.fileManager.fileExists(atPath: misspelledPath.path())) {
+            do {
+                try self.fileManager.moveItem(at: misspelledPath, to: self.assetsURLCollection.customAssetsPreviewURL)
+            }
+            catch {
+                print("Failed to move misspelled path")
+            }
+            do {
+                self.TVIdleScreenEntries?.assets.forEach({ asset in
+                    if (asset.previewImage.contains("/com.xtl.customizedarealscreensaver/asset-perview/")) {
+                        do {
+                            var newAsset = try JSONDecoder().decode(TVIdleScreenEntryAsset.self, from: JSONEncoder().encode(asset))
+                            newAsset.previewImage.replace("/com.xtl.customizedarealscreensaver/asset-perview/", with: "/com.xtl.customizedarealscreensaver/asset-preview/")
+                            self.TVIdleScreenEntries?.assets.append(newAsset)
+                        }
+                        catch {
+                            print("Failed to fix misspelled entries")
+                        }
+                    }
+                })
+                self.TVIdleScreenEntries?.categories[4].subcategories.forEach({subcategory in
+                    if (subcategory.previewImage.contains("/com.xtl.customizedarealscreensaver/asset-perview/")) {
+                        do {
+                            var newSubcategory = try JSONDecoder().decode(TVIdleScreenEntryCategorySubcategory.self, from: JSONEncoder().encode(subcategory))
+                            newSubcategory.previewImage.replace("/com.xtl.customizedarealscreensaver/asset-perview/", with: "/com.xtl.customizedarealscreensaver/asset-preview/")
+                            self.TVIdleScreenEntries?.categories[4].subcategories.append(newSubcategory)
+                            self.deleteScreenSaver(id: subcategory.representativeAssetID, soft: true)
+                        }
+                        catch {
+                            print("Failed to fix misspelled subcategories")
+                        }
+                    }
+                })
+                self._saveEntryChanges()
+                self.refreshSystemAssetd()
+            }
+            catch {
+                print("Failed to fix misspelled entries or subcategories")
+            }
+        }
     }
     
     private func _createUserDataDirectory(customAssetsPreviewURL: URL, customAssetsVideoURL: URL){
@@ -118,7 +167,7 @@ class CustomScreenSaverManager: ObservableObject {
         self.customAerialCategoryIndex = self.TVIdleScreenEntries!.categories.firstIndex { category in
             category.id == self.customAerialCategoryUUID
         } ?? -1
-
+        
         if(self.customAerialCategoryIndex == -1){
             self._backupDefaultEntries()
             self._createCustomAerialCategory()
@@ -183,6 +232,7 @@ class CustomScreenSaverManager: ObservableObject {
             print(error)
         }
         self._updateCustomAerialCategorySubcategories()
+        self.refreshSystemAssetd()
     }
     
     private func _formatURLToCommandLineSafe(_ originalURL: URL) -> String{
@@ -192,12 +242,12 @@ class CustomScreenSaverManager: ObservableObject {
     private func _copyItemWithCommand(from: URL, to: URL){
         let _from = self._formatURLToCommandLineSafe(from)
         let _to = self._formatURLToCommandLineSafe(to)
-        self._runCommand(command: "sudo cp \(_from) \(_to)", requirePsssword: true)
+        let _ = self._runCommand(command: "sudo cp \(_from) \(_to)", requirePsssword: true)
     }
     
     private func _removeItemWithCommand(at: URL){
         let _at = self._formatURLToCommandLineSafe(at)
-        self._runCommand(command: "sudo rm \(_at)", requirePsssword: true)
+        let _ = self._runCommand(command: "sudo rm \(_at)", requirePsssword: true)
     }
     
     private func _runCommand(command: String, requirePsssword: Bool = false) -> Int{
@@ -228,6 +278,16 @@ class CustomScreenSaverManager: ObservableObject {
             return Int(process.terminationStatus)
         }
         return 0
+    }
+    
+    func refreshSystemAssetd() {
+        // Won't show up in system settings #8
+        var _ = self._runCommand(command: "killall System\\ Settings", requirePsssword: true)
+        _ = self._runCommand(command: "sudo killall idleassetsd", requirePsssword: true)
+        _ = self._runCommand(command: "sudo killall AssetCache", requirePsssword: true)
+        _ = self._runCommand(command: "sudo killall AssetCacheLocatorService", requirePsssword: true)
+        _ = self._runCommand(command: "sudo killall AssetCacheTetheratorService", requirePsssword: true)
+        _ = self._runCommand(command: "sudo killall mobileassetd", requirePsssword: true)
     }
     
     func setUserPassword(password: String){
@@ -275,7 +335,7 @@ class CustomScreenSaverManager: ObservableObject {
         self._addNewAerialAsset(newEntryAsset: newEntryAsset, newSubcategory: newSubcategory, originalAssetPath: videoPath, originalAsserPreviewPath: videoPreviewPath)
     }
     
-    func deleteScreenSaver(id: String){
+    func deleteScreenSaver(id: String, soft: Bool = false){
         self.TVIdleScreenEntries?.assets.removeAll(where: { asset in
             asset.id == id
         })
@@ -283,15 +343,17 @@ class CustomScreenSaverManager: ObservableObject {
             subcategory.representativeAssetID == id
         })
         
-        do {
-            self._removeItemWithCommand(at: self.assetsURLCollection.systemAssetsVideoURL.appending(path: "4KSDR240FPS/\(id).mov"))
-            self._removeItemWithCommand(at: self.assetsURLCollection.systemAssetsPreviewURL.appending(path: "asset-preview-\(id).jpg"))
-            try self.fileManager.removeItem(at: self.assetsURLCollection.customAssetsVideoURL.appending(path: "\(id).mov"))
-            try self.fileManager.removeItem(at: self.assetsURLCollection.customAssetsPreviewURL.appending(path: "asset-preview-\(id).jpg"))
-        } catch {
-            print(error)
+        if (!soft) {
+            do {
+                self._removeItemWithCommand(at: self.assetsURLCollection.systemAssetsVideoURL.appending(path: "4KSDR240FPS/\(id).mov"))
+                self._removeItemWithCommand(at: self.assetsURLCollection.systemAssetsPreviewURL.appending(path: "asset-preview-\(id).jpg"))
+                try self.fileManager.removeItem(at: self.assetsURLCollection.customAssetsVideoURL.appending(path: "\(id).mov"))
+                try self.fileManager.removeItem(at: self.assetsURLCollection.customAssetsPreviewURL.appending(path: "asset-preview-\(id).jpg"))
+            } catch {
+                print(error)
+            }
         }
-
+        
         self._saveEntryChanges()
     }
     

@@ -13,6 +13,16 @@ You'll need
 - A .mov video
 - A .jpg image for video preview
 
+### Recommended Video Format
+| Attribute | Requirements |
+|:-|:-| 
+| Length | At least 15 seconds |
+| Audio Track | Prefer no audio track |
+| FPS (Frames Per Second) | At 60 FPS |
+| Aspect Ratio | 16:9 |
+| Resolution | At least 1920x1080 |
+| Video Format | Must be .mov |
+
 Upon launch the app, you must enter your password in order to modify system resources.
 ![](./docs/launch.png)
 

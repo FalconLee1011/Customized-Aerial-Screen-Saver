@@ -30,6 +30,10 @@ struct CustomAerialsManagementView: View {
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: self.screenSaverManager.getSystemAssetsVideoURL())
     }
     
+    private func forceRefreshAssetsd(){
+        self.screenSaverManager.refreshSystemAssetd()
+    }
+    
     private func getAssetSize(filePath: String) -> Int{
         do {
             let fileAtrribute = try FileManager.default.attributesOfItem(atPath: filePath)
@@ -57,6 +61,9 @@ struct CustomAerialsManagementView: View {
                 }.padding()
                 Button(action: openSystemAssetsInFinder) {
                     Label("Open system assets in finder", systemImage: "folder")
+                }.padding()
+                Button(action: forceRefreshAssetsd) {
+                    Label("Refresh Assetsd (if screen saver not showing up)", systemImage: "arrow.triangle.2.circlepath.circle")
                 }.padding()
             }.frame(alignment: .top)
             ScrollView{
