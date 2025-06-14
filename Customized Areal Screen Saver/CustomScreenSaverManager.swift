@@ -214,7 +214,7 @@ class CustomScreenSaverManager: ObservableObject {
             self._copyItemWithCommand(from: URL(fileURLWithPath: originalAsserPreviewPath), to: self.assetsURLCollection.systemAssetsPreviewURL.appending(path: "asset-preview-\(newEntryAsset.id).jpg"))
             self._copyItemWithCommand(from: URL(fileURLWithPath: originalAssetPath), to: self.assetsURLCollection.systemAssetsVideoURL.appending(path: "4KSDR240FPS/\(newAssetID).mov"))
         } catch {
-            print("Error when creat")
+            print("Error when creating asset.")
             print(error)
         }
         
@@ -242,7 +242,7 @@ class CustomScreenSaverManager: ObservableObject {
     private func _copyItemWithCommand(from: URL, to: URL){
         let _from = self._formatURLToCommandLineSafe(from)
         let _to = self._formatURLToCommandLineSafe(to)
-        let _ = self._runCommand(command: "sudo cp \(_from) \(_to)", requirePsssword: true)
+        let _ = self._runCommand(command: "sudo cp -r \(_from) \(_to)", requirePsssword: true)
     }
     
     private func _removeItemWithCommand(at: URL){
@@ -355,6 +355,57 @@ class CustomScreenSaverManager: ObservableObject {
         }
         
         self._saveEntryChanges()
+    }
+    
+    func restoreScreenSavers() {
+        self._copyItemWithCommand(
+            from: URL(string: "\(self.assetsURLCollection.customAssetsPreviewURL)/*")!,
+            to: self.assetsURLCollection.systemAssetsPreviewURL
+        )
+        self._copyItemWithCommand(
+            from: URL(string: "\(self.assetsURLCollection.customAssetsVideoURL)/*")!,
+            to: URL(string: "\(self.assetsURLCollection.systemAssetsVideoURL)/4KSDR240FPS/")!
+        )
+        
+        do{
+            let newData = try Data(contentsOf: self.assetsURLCollection.systemAssetsEntriesURL, options: .mappedIfSafe)
+            var newDataEntry = try JSONDecoder().decode(TVIdleScreenEntry.self, from: newData)
+
+            let customData = try Data(contentsOf: self.assetsURLCollection.customAssetsEntriesURL, options: .mappedIfSafe)
+            let customDataEntry = try JSONDecoder().decode(TVIdleScreenEntry.self, from: customData)
+            
+            let customIndex = customDataEntry.categories.firstIndex { category in
+                category.id == self.customAerialCategoryUUID
+            } ?? -1
+            
+            let existingCustomIndex = newDataEntry.categories.firstIndex { category in
+                category.id == self.customAerialCategoryUUID
+            } ?? -1
+            if (customIndex != -1) {
+                let customEntryCategory = customDataEntry.categories[customIndex];
+                let customEntryAssets = customDataEntry.assets.filter { asset in
+                    asset.categories.contains(self.customAerialCategoryUUID)
+                }
+                if (existingCustomIndex != -1) {
+                    newDataEntry.categories[existingCustomIndex] = customEntryCategory
+                } else {
+                    newDataEntry.categories.append(customEntryCategory)
+                }
+                customEntryAssets.forEach { asset in
+                    newDataEntry.assets.append(asset)
+                }
+                self.TVIdleScreenEntries = newDataEntry
+                let encodedJSON = try JSONEncoder().encode(newDataEntry)
+                try encodedJSON.write(to: self.assetsURLCollection.customAssetsEntriesURL)
+                self._copyItemWithCommand(
+                    from: self.assetsURLCollection.customAssetsEntriesURL,
+                    to: self.assetsURLCollection.systemAssetsEntriesURL
+                )
+                self.refreshSystemAssetd()
+            }
+        } catch {
+            print(error)
+        }
     }
     
 }

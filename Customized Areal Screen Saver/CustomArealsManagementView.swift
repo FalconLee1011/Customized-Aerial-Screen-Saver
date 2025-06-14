@@ -34,6 +34,10 @@ struct CustomAerialsManagementView: View {
         self.screenSaverManager.refreshSystemAssetd()
     }
     
+    private func restoreAssets(){
+        self.screenSaverManager.restoreScreenSavers()
+    }
+    
     private func getAssetSize(filePath: String) -> Int{
         do {
             let fileAtrribute = try FileManager.default.attributesOfItem(atPath: filePath)
@@ -51,20 +55,29 @@ struct CustomAerialsManagementView: View {
     var body: some View {
         VStack{
             HStack{
-                Button(action: {
-                    self.showAddDialog = true
-                }) {
-                    Label("Add Custom Aerial Screen Saver", systemImage: "plus")
-                }.padding()
-                Button(action: openCustomAssetsInFinder) {
-                    Label("Open custom assets in finder", systemImage: "folder")
-                }.padding()
-                Button(action: openSystemAssetsInFinder) {
-                    Label("Open system assets in finder", systemImage: "folder")
-                }.padding()
-                Button(action: forceRefreshAssetsd) {
-                    Label("Refresh Assetsd (if screen saver not showing up)", systemImage: "arrow.triangle.2.circlepath.circle")
-                }.padding()
+                VStack{
+                    HStack {
+                        Button(action: {
+                            self.showAddDialog = true
+                        }) {
+                            Label("Add Custom Aerial Screen Saver", systemImage: "plus")
+                        }.padding()
+                        Button(action: openCustomAssetsInFinder) {
+                            Label("Open custom assets in finder", systemImage: "folder")
+                        }.padding()
+                        Button(action: openSystemAssetsInFinder) {
+                            Label("Open system assets in finder", systemImage: "folder")
+                        }.padding()
+                    }
+                    HStack{
+                        Button(action: forceRefreshAssetsd) {
+                            Label("Refresh Assetsd (if screen saver not showing up)", systemImage: "arrow.triangle.2.circlepath.circle")
+                        }.padding()
+                        Button(action: restoreAssets) {
+                            Label("Restore Screen Savers (After a system update)", systemImage: "arrow.uturn.left.circle")
+                        }.padding()
+                    }
+                }.padding(.bottom)
             }.frame(alignment: .top)
             ScrollView{
                 LazyVGrid(columns: columns){
