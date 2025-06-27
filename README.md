@@ -3,6 +3,10 @@
   <img src="./docs/banner.png" />
 </div>
 
+## Important Notice
+> [!IMPORTANT]
+> This app is currently not working on macOS 26 Tahoe, a beta version is on the way to unlock the supercharged customization!
+
 ## Overview
 Since [macOS 14.0 Sonoma](https://www.apple.com/macos/sonoma/), Apple has brought Aerial Screen Savers from tvOS to macOS, which provides stunning live screen savers when the device is locked.
 
@@ -11,7 +15,7 @@ However, it does not provide the ability to customize, so, here's a solution to 
 ## Usage
 You'll need
 - A .mov video
-- A .jpg image for video preview
+- A .png image for video preview
 
 ### Recommended Video Format
 | Attribute | Requirements |
@@ -54,10 +58,6 @@ And there goes a JSON
 `/Library/Application Support/com.apple.idleassetsd/Customer/entries.json` which stores all aerial screen saver's info
 
 By modifying the JSON, you can add whatever you want as an Aerial Screen saver, that's why you'll need to provide your password in order to modify these files.
-
-## Known issues
-- It may take some time for the screen saver to appear in the System Settings, since it will take some time for macOS to update Aerial Screen Saver's data under `/Library/Application Support/com.apple.idleassetsd/Aerial.sqlite*`
-  - I am working on how to trigger the update of the database, however I have no clue at the moment.
 
 ## Community is everything!
 If you find this project useful and would like to support its development, you can
