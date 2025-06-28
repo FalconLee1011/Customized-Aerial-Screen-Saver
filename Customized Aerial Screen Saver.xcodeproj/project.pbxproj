@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D268FA142E0F1A5E0062A9E7 /* appiconV2.icon in Resources */ = {isa = PBXBuildFile; fileRef = D268FA132E0F1A5E0062A9E7 /* appiconV2.icon */; };
 		D27A8E152AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */; };
 		D27A8E172AD0812A00BD9CE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A8E162AD0812A00BD9CE1 /* ContentView.swift */; };
 		D27A8E192AD0812B00BD9CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D268FA132E0F1A5E0062A9E7 /* appiconV2.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = appiconV2.icon; sourceTree = "<group>"; };
 		D27A8E112AD0812A00BD9CE1 /* Customized Aerial Screen Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Customized Aerial Screen Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27A8E142AD0812A00BD9CE1 /* Customized_Areal_Screen_SaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customized_Areal_Screen_SaverApp.swift; sourceTree = "<group>"; };
 		D27A8E162AD0812A00BD9CE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				D2ACEC0E2AD082D500EF6D69 /* CustomScreenSaverManager.swift */,
 				D2ACEC102AD0C52500EF6D69 /* TVIdleScreenEntries.swift */,
 				D27A8E182AD0812B00BD9CE1 /* Assets.xcassets */,
+				D268FA132E0F1A5E0062A9E7 /* appiconV2.icon */,
 				D27A8E1A2AD0812B00BD9CE1 /* Preview Content */,
 			);
 			path = "Customized Areal Screen Saver";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D268FA142E0F1A5E0062A9E7 /* appiconV2.icon in Resources */,
 				D27A8E1C2AD0812B00BD9CE1 /* Preview Assets.xcassets in Resources */,
 				D27A8E192AD0812B00BD9CE1 /* Assets.xcassets in Resources */,
 			);
@@ -404,8 +408,9 @@
 		D27A8E372AD0812B00BD9CE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = appiconV2;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -416,14 +421,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Customized Aerial ScreenSaver";
+				INFOPLIST_KEY_CFBundleDisplayName = "Customized Aerial screensaver Beta";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "XTLi aka Falcon @ https://xtl.tw 2023";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 2.0b;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -434,8 +440,9 @@
 		D27A8E382AD0812B00BD9CE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = appiconV2;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Customized Areal Screen Saver/Customized_Areal_Screen_Saver.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -446,14 +453,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Customized Aerial ScreenSaver";
+				INFOPLIST_KEY_CFBundleDisplayName = "Customized Aerial screensaver Beta";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "XTLi aka Falcon @ https://xtl.tw 2023";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 2.0b;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xtl.Customized-Areal-Screen-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
