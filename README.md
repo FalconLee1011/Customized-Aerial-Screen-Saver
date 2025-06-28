@@ -1,6 +1,6 @@
 # Customized Aerial Screen Saver
 <div style="width: 100%; text-align: center;">
-  <img src="./docs/banner.png" />
+  <img src="./docs/banner-tahoe.png" />
 </div>
 
 ## Important Notice
