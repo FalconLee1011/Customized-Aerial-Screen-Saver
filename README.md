@@ -5,9 +5,13 @@
 
 ## Important Notice
 > [!IMPORTANT]
-> The latest stable release is currently not working on macOS 26 Tahoe.
+> Bad news for everyone. Since macOS 26 Tahoe. the original workaround is no longer working.
 > 
-> However, a [beta branch](https://github.com/FalconLee1011/Customized-Aerial-Screen-Saver/tree/main) and [beta version has been released](https://github.com/FalconLee1011/Customized-Aerial-Screen-Saver/releases/tag/v2.0.0beta) that is providing support macOS 26 Tahoe! Unleash supercharged customization!
+> That means this app is no longer working properly on macOS 26 Tahoe (and assume the future releases of macOS)
+>
+> Given the current situation, I've decide to put this project on hold until a better solution is dropped (yes I am working on it, but the progress is relatively slow) 
+> 
+> It's been a good journey with everyone involved, hope we can bring the same integration hacked again soon in the future!
 
 ## Overview
 Since [macOS 14.0 Sonoma](https://www.apple.com/macos/sonoma/), Apple has brought Aerial Screen Savers from tvOS to macOS, which provides stunning live screen savers when the device is locked.
